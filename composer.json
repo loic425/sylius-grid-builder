@@ -10,7 +10,8 @@
     "require-dev": {
         "mobizel/coding-standard": "^1.0",
         "phpspec/phpspec": "^7.0",
-        "phpstan/phpstan": "^0.12.89"
+        "phpstan/phpstan": "^0.12.89",
+        "vimeo/psalm": "^4.7"
     },
     "autoload": {
         "psr-4": {
@@ -26,7 +27,8 @@
         "analyse": [
             "@composer validate --strict",
             "vendor/bin/ecs check src spec",
-            "vendor/bin/phpstan analyse --ansi -c phpstan.neon -l max src"
+            "vendor/bin/phpstan analyse --ansi -c phpstan.neon -l max src",
+            "vendor/bin/psalm"
         ],
         "fix": [
             "vendor/bin/ecs check src spec --fix"
