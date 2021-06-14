@@ -9,7 +9,8 @@
     },
     "require-dev": {
         "mobizel/coding-standard": "^1.0",
-        "phpspec/phpspec": "^7.0"
+        "phpspec/phpspec": "^7.0",
+        "phpstan/phpstan": "^0.12.89"
     },
     "autoload": {
         "psr-4": {
@@ -24,7 +25,8 @@
     "scripts": {
         "analyse": [
             "@composer validate --strict",
-            "vendor/bin/ecs check src spec"
+            "vendor/bin/ecs check src spec",
+            "vendor/bin/phpstan analyse --ansi -c phpstan.neon -l max src"
         ],
         "fix": [
             "vendor/bin/ecs check src spec --fix"
