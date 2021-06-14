@@ -1,0 +1,5 @@
+suites:
+    Component:
+        namespace: SyliusGridBuilder
+        psr4_prefix: SyliusGridBuilder
+        src_path: src

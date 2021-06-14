@@ -1,1 +1,1 @@
-# sylius-grid-builder
+# Sylius Grid Builder

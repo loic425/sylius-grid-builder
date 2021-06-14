@@ -1,0 +1,36 @@
+{
+    "name": "loic425/sylius-grid-builder",
+    "description": "Sylius grid plugin to help building grids",
+    "license": "MIT",
+    "type": "package",
+    "require": {
+        "php": "^7.4",
+        "sylius/grid-bundle": "^1.9"
+    },
+    "require-dev": {
+        "mobizel/coding-standard": "^1.0",
+        "phpspec/phpspec": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SyliusGridBuilder\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "spec\\SyliusGridBuilder\\spec\\": "spec/"
+        }
+    },
+    "scripts": {
+        "analyse": [
+            "@composer validate --strict",
+            "vendor/bin/ecs check src spec"
+        ],
+        "fix": [
+            "vendor/bin/ecs check src spec --fix"
+        ],
+        "test": [
+            "vendor/bin/phpspec run --ansi --no-interaction"
+        ]
+    }
+}
