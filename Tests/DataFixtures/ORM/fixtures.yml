@@ -1,0 +1,48 @@
+App\Entity\Nationality:
+    nationality_american:
+        name: "American"
+    nationality_english:
+        name: "English"
+
+App\Entity\Author:
+    author_michael_crichton:
+        name: "Michael Crichton"
+        nationality: "@nationality_american"
+    author_john_watson:
+        name: "John Watson"
+        nationality: "@nationality_english"
+    author_random:
+        name: "Random Author Without Nationality"
+    author_{1..19}:
+        name: "<firstName()> <lastName()>"
+        nationality: "@nationality_english"
+
+App\Entity\Book:
+    book_jurassic_park:
+        title: "Jurassic Park"
+        author: "@author_michael_crichton"
+        price: "@price_1"
+        state: 'published'
+    book_the_lost_world:
+        title: "The Lost World"
+        author: "@author_michael_crichton"
+        price: "@price_2"
+        state: 'unpublished'
+    book_study_in_scarlet:
+        title: "A Study in Scarlet"
+        author: "@author_john_watson"
+        price: "@price_<numberBetween(1, 2)>"
+        state: 'initial'
+    book_{1..100}:
+        title: "Book <current()>"
+        author: "@author_<numberBetween(1, 19)>"
+        price: "@price_<numberBetween(1, 2)>"
+        state: 'published'
+
+App\Entity\Price:
+    price_1:
+        amount: 4200
+        currencyCode: "EUR"
+    price_2:
+        amount: 1000
+        currencyCode: "GBP"
