@@ -11,7 +11,13 @@
         "mobizel/coding-standard": "^1.0",
         "phpspec/phpspec": "^7.0",
         "phpstan/phpstan": "^0.12.89",
-        "vimeo/psalm": "^4.7"
+        "vimeo/psalm": "^4.7",
+        "symfony/dotenv": "^5.3",
+        "sylius/resource-bundle": "^1.8",
+        "lchrusciel/api-test-case": "^5.1",
+        "phpunit/phpunit": "^9.5",
+        "matthiasnoback/symfony-config-test": "^4.2",
+        "matthiasnoback/symfony-dependency-injection-test": "^4.2"
     },
     "autoload": {
         "psr-4": {
@@ -20,7 +26,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "spec\\SyliusGridBuilder\\spec\\": "spec/"
+            "spec\\SyliusGridBuilder\\spec\\": "spec/",
+            "App\\": "test/src/"
         }
     },
     "scripts": {
@@ -34,7 +41,8 @@
             "vendor/bin/ecs check src spec --fix"
         ],
         "test": [
-            "vendor/bin/phpspec run --ansi --no-interaction"
+            "vendor/bin/phpspec run --ansi --no-interaction",
+            "vendor/bin/phpunit --colors=always"
         ]
     }
 }
