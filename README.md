@@ -64,6 +64,10 @@ return static function (GridConfig $grid) {
             ->setSortable(true, 'author.nationality.name')
         )
         ->setLimits([10, 5, 15])
+        ->addCreateAction()
+        ->addUpdateAction()
+        ->addDeleteAction()
+        ->addDeleteAction([], 'bulk')
     );
 };
 
