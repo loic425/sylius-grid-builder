@@ -142,6 +142,14 @@ class GridBuilderSpec extends ObjectBehavior
         $gridBuilder->toArray()['actions']['main']->shouldHaveKey('create');
     }
 
+    function it_add_create_actions_on_a_specific_group(): void
+    {
+        $gridBuilder = $this->addCreateAction([], 'custom');
+
+        $gridBuilder->toArray()['actions']->shouldHaveKey('custom');
+        $gridBuilder->toArray()['actions']['custom']->shouldHaveKey('create');
+    }
+
     function it_add_update_actions(): void
     {
         $gridBuilder = $this->addUpdateAction();
@@ -150,11 +158,36 @@ class GridBuilderSpec extends ObjectBehavior
         $gridBuilder->toArray()['actions']['item']->shouldHaveKey('update');
     }
 
+    function it_add_update_actions_on_a_specific_group(): void
+    {
+        $gridBuilder = $this->addUpdateAction([], 'custom');
+
+        $gridBuilder->toArray()['actions']->shouldHaveKey('custom');
+        $gridBuilder->toArray()['actions']['custom']->shouldHaveKey('update');
+    }
+
     function it_add_delete_actions(): void
     {
         $gridBuilder = $this->addDeleteAction();
 
         $gridBuilder->toArray()['actions']->shouldHaveKey('item');
         $gridBuilder->toArray()['actions']['item']->shouldHaveKey('delete');
+    }
+
+    function it_add_delete_actions_on_a_specific_group(): void
+    {
+        $gridBuilder = $this->addDeleteAction([], 'custom');
+
+        $gridBuilder->toArray()['actions']->shouldHaveKey('custom');
+        $gridBuilder->toArray()['actions']['custom']->shouldHaveKey('delete');
+    }
+
+    function it_add_bulk_actions(): void
+    {
+        $action = Action::create('delete', 'delete');
+        $gridBuilder = $this->addBulkAction($action);
+
+        $gridBuilder->toArray()['actions']->shouldHaveKey('bulk');
+        $gridBuilder->toArray()['actions']['bulk']->shouldHaveKey('delete');
     }
 }
