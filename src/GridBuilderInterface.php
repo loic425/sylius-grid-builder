@@ -42,7 +42,7 @@ interface GridBuilderInterface
 
     public function addActionGroup(string $name): self;
 
-    public function addAction(ActionInterface $name, string $group): self;
+    public function addAction(ActionInterface $action, string $group): self;
 
     public function addMainAction(ActionInterface $action): self;
 
