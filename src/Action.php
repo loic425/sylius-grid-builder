@@ -69,7 +69,7 @@ final class Action implements ActionInterface
 
     public function setPosition(int $position): ActionInterface
     {
-        $this->position  = $position;
+        $this->position = $position;
 
         return $this;
     }
