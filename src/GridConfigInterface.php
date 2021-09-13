@@ -15,7 +15,7 @@ namespace SyliusGridBuilder;
 
 use Symfony\Component\Config\Builder\ConfigBuilderInterface;
 
-/**
+/*
  * @psalm-suppress UnrecognizedStatement
  * @psalm-suppress UndefinedClass
  */
