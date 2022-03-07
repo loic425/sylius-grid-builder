@@ -1,3 +1,5 @@
+It's now integrated to [Sylius grid bundle 1.11 on beta release](https://github.com/Sylius/SyliusGridBundle/releases/tag/v1.11.0-BETA.1).
+
 
 # Sylius Grid Builder
 
